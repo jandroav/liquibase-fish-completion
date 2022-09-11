@@ -6,7 +6,7 @@ Every command and argument is shown with its [official documentation](https://do
 
 ## :movie_camera: In action
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/Q-nYyONDv6Q/0.jpg)](http://www.youtube.com/watch?v=Q-nYyONDv6Q "Liquibase shell completion for fish shell")
+[![Liquibase shell completion for fish shell](/img/youtube.png)](http://www.youtube.com/watch?v=Q-nYyONDv6Q "Liquibase shell completion for fish shell")
 
 ## :construction_worker: Contributions
 

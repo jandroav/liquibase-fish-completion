@@ -1,15 +1,18 @@
-# :tropical_fish: liquibase-fish-completion
+# :tropical_fish: liquibase-fish-completion :shell:
 
 Liquibase shell completion for [fish shell](https://fishshell.com). Just place the `liquibase.fish` completion file under your user `.config/fish/completions/` folder and enjoy it!
 
 Every command and argument is shown with its [official documentation](https://docs.liquibase.com/commands/home.html).
 
+## :movie_camera: In action
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/Q-nYyONDv6Q/0.jpg)](http://www.youtube.com/watch?v=Q-nYyONDv6Q "Liquibase shell completion for fish shell")
 
 ## :construction_worker: Contributions
 
 Feel free to test this and propose changes or new commands by opening a [new pull request](https://github.com/jandroav/liquibase-fish-completion/pulls).
 
-### :construction_worker: Adding new command
+### :new: Adding new commands
 
 1. Add the new command to the `liquibase_commands` list:
 

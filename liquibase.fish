@@ -1,12 +1,12 @@
 set -l liquibase_commands init update update-sql update-count update-count-sql update-one-changeset update-one-changeset-sql update-testing-rollback update-to-tag update-to-tag-sql rollback rollback-sql rollback-to-date rollback-to-date-sql rollback-count rollback-count-sql \
 rollback-one-changeset rollback-one-changeset-sql rollback-one-update rollback-one-update-sql future-rollback-sql future-rollback-count-sql future-rollback-from-tag-sql generate-changelog snapshot snapshot-reference diff diff-changelog \
 history status calculate-checksum changelog-sync changelog-sync-sql changelog-sync-to-tag clear-checksums drop-all execute-sql list-locks mark-next-changeset-ran mark-next-changeset-ran-sql release-locks tag tag-exists unexpected-changesets validate \
-db-doc register-changelog sync-hub deactivate-changelog checks
+db-doc register-changelog sync-hub deactivate-changelog checks --version
 
 set -l liquibase_parameters --changelog-file --username --password --url --classpath --driver --databaseClass --propertyProviderClass --defaultSchemaName \
 --contexts --labels --defaultsFile --duplicateFileMode --delimiter --driverPropertiesFile --changeExecListenerClass --changeExecListenerPropertiesFile --liquibaseCatalogName  --liquibaseSchemaName --databaseChangeLogTableName \
 --databaseChangeLogLockTableName --databaseChangeLogTablespaceName --liquibaseSchemaName --includeSystemClasspath --overwriteOutputFile --promptForNonLocalDatabase --log-level --logFile --currentDateTimeFunction \
---outputDefaultSchema --outputDefaultCatalog --outputFile --rollbackScript --excludeObjects --includeObjects --help --version --snapshotFormat --referenceUsername --referencePassword --referenceUrl \
+--outputDefaultSchema --outputDefaultCatalog --outputFile --rollbackScript --excludeObjects --includeObjects --help --snapshotFormat --referenceUsername --referencePassword --referenceUrl \
 --defaultCatalogName --defaultSchemaName --referenceDefaultCatalogName --referenceDefaultSchemaName --schemas --referenceSchemas --searchPath --outputSchemaAs --includeCatalog --includeSchema --includeTablespace \
 --referenceDriver --dataOutputDirectory --diffTypes --diffTypes --format --liquibaseProLicenseKey --help --changeset-author --changeset-id --changeset-path --force
 
@@ -390,3 +390,6 @@ complete -f -c liquibase -n "__fish_seen_subcommand_from checks; and __fish_seen
 complete -f -c liquibase -n "__fish_seen_subcommand_from checks; and __fish_seen_subcommand_from enable; and not __fish_seen_subcommand_from --check-name" -a --check-name
 complete -f -c liquibase -n "__fish_seen_subcommand_from checks; and __fish_seen_subcommand_from disable; and not __fish_seen_subcommand_from --check-name" -a --check-name
 complete -f -c liquibase -n "__fish_seen_subcommand_from checks; and __fish_seen_subcommand_from copy; and not __fish_seen_subcommand_from --check-name" -a --check-name
+
+# Other commands
+complete -f -c liquibase -n "not __fish_seen_subcommand_from $liquibase_commands" -a --version -d 'Show the curren Liquibase version'

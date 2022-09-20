@@ -3,13 +3,6 @@ rollback-one-changeset rollback-one-changeset-sql rollback-one-update rollback-o
 history status calculate-checksum changelog-sync changelog-sync-sql changelog-sync-to-tag clear-checksums drop-all execute-sql list-locks mark-next-changeset-ran mark-next-changeset-ran-sql release-locks tag tag-exists unexpected-changesets validate \
 db-doc register-changelog sync-hub deactivate-changelog checks --version
 
-set -l liquibase_parameters --changelog-file --username --password --url --classpath --driver --databaseClass --propertyProviderClass --defaultSchemaName \
---contexts --labels --defaultsFile --duplicateFileMode --delimiter --driverPropertiesFile --changeExecListenerClass --changeExecListenerPropertiesFile --liquibaseCatalogName  --liquibaseSchemaName --databaseChangeLogTableName \
---databaseChangeLogLockTableName --databaseChangeLogTablespaceName --liquibaseSchemaName --includeSystemClasspath --overwriteOutputFile --promptForNonLocalDatabase --log-level --logFile --currentDateTimeFunction \
---outputDefaultSchema --outputDefaultCatalog --outputFile --rollbackScript --excludeObjects --includeObjects --help --snapshotFormat --referenceUsername --referencePassword --referenceUrl \
---defaultCatalogName --defaultSchemaName --referenceDefaultCatalogName --referenceDefaultSchemaName --schemas --referenceSchemas --searchPath --outputSchemaAs --includeCatalog --includeSchema --includeTablespace \
---referenceDriver --dataOutputDirectory --diffTypes --diffTypes --format --liquibaseProLicenseKey --help --changeset-author --changeset-id --changeset-path --force
-
 set -l liquibase_init_commands hub project start-h2
 
 set -l liquibase_checks_commands run delete bulk-set show customize reset enable disable copy
@@ -393,3 +386,5 @@ complete -f -c liquibase -n "__fish_seen_subcommand_from checks; and __fish_seen
 
 # Other commands
 complete -f -c liquibase -n "not __fish_seen_subcommand_from $liquibase_commands" -a --version -d 'Show the curren Liquibase version'
+complete -f -c liquibase -n "__fish_seen_subcommand_from $liquibase_commands" -a --log-level -d 'Controls the amount of messages that are generated when running Liquibase commands. The --log-level can be set to the following values: SEVERE (highest level) – Show serious failures that may prevent program execution. WARNING – Show potential problems for program execution. INFO – Show informational messages. FINE (lowest level; formerly DEBUG) – Show tracing information of program execution and minor failures. OFF – Hide all log messages.'
+complete -f -c liquibase -n "__fish_seen_subcommand_from $liquibase_commands" -a --log-file -d 'To log execution details of any command, use the log-file parameter. The log-file parameter sends logging messages of what Liquibase does during runtime to a file'
